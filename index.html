@@ -27,12 +27,12 @@
                     </div>
                   </div>
             </div>
-            <button>Create note</button>
+            <button type="button" class="btn btn-lg btn-primary js-modal" data-modal="#modal_1">Create note</button>
             <div class="listWrapperSecondTable">
                 <div class='listSecondTable__header'>
                     <div>Note category</div>
                     <div>Active</div>
-                    <div>Archive</div>
+                    <div>Archived</div>
                   </div>
                   <div class='listSecondTable__items'>
                     <div class="listSecondTable__items__main">
@@ -41,7 +41,30 @@
                   </div>
             </div>
         </div>
+          <div id="modal_1" class="modal__window">
+            <div class="modal__window__container">
+              <h3 class="modal__window__container__header">Add task:</h3>
+              <div class="modal__window__container__left">
+                <label for="category">Choose category:</label><br><select name="category" id="category">
+                <option value="Shop">Shop</option>
+                <option value="Random Thought">Random Thought</option>
+                <option value="Gym">Gym</option>
+                <option value="Idea">Idea</option>
+              </select>
+              <br>
+              <label class="modal__window__container__labelOfTask" for="nameOfTask">Name:</label><br><input name="nameOfTask" id="nameOfTask" type="text">
+              <br>
+              <br>
+              <span class="warning hidden">Fill in all fields</span></div>
+              <div class="modal__window__container__right"><label for="content">Content:</label><textarea name="content" id="content" cols="30" rows="10"></textarea></div>
+        
+              <a href="#" class="modal__close">Save</a>
+            </div>
+          </div>
+        
+          <div class="modal__window__backdrop hidden" id="modal-backdrop"></div>
     </div>
-    <script src="./index.js"></script>
+    <script type="module" src="./components/ModalWindow.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
