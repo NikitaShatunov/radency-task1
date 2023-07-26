@@ -1,4 +1,4 @@
-import { addTask } from "../assets/img/utils/archive.js";
+import { addTask } from "../utils/archive.js";
 
 (function ()  {
     const backdrop = document.querySelector('.modal__window__backdrop');
@@ -12,6 +12,7 @@ import { addTask } from "../assets/img/utils/archive.js";
       const modalBtnOpen = evt.target.closest('.js-modal');
       if (modalBtnOpen) { 
         const modalSelector = modalBtnOpen.dataset.modal;
+       
         showModal(document.querySelector(modalSelector));
       }
   

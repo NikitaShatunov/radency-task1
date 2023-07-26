@@ -3,7 +3,7 @@ import { formatDate } from "./formatDate.js";
 export let listOfAchives = [
     {
       id: 0,
-      archived: false,
+      archived: true,
       name: "Shopping list",
       created: "April 20, 2021",
       category: "Shop",
@@ -22,7 +22,7 @@ export let listOfAchives = [
     },
     {
       id: 2,
-      archived: false,
+      archived: true,
       name: "Great idea",
       created: "January 15, 2023",
       category: "Random Thought",
@@ -32,7 +32,7 @@ export let listOfAchives = [
     },
     {
       id: 3,
-      archived: false,
+      archived: true,
       name: "Workout routine",
       created: "March 2, 2023",
       category: "Gym",
