@@ -1,5 +1,5 @@
 import { formatDate } from "./formatDate.js";
-
+//main store of tasks, similarly with redux store
 export let listOfAchives = [
     {
       id: 0,
@@ -54,8 +54,8 @@ export let listOfAchives = [
       name: "Travel plans",
       created: "April 3, 2023",
       category: "Idea",
-      content: "Start saving money for a trip to Japan next year from 12.10.2023",
-      date: "12.10.2023",
+      content: "Start saving money for a trip to Japan next year from 12/10/2023",
+      date: "12/10/2023",
     },
     {
       id: 6,
@@ -69,6 +69,7 @@ export let listOfAchives = [
     },
   ];
 export let listOfArchivedTasks = []
+//reducers
 export const filterDeletedList = (id) => {
    listOfAchives =  listOfAchives.filter(key => key.id !== id)
 }
@@ -80,16 +81,36 @@ export const filterArchiveList = (id) => {
     })
  }
  export const addTask = (category, name, content) => {
+  const regex = /\d{1,2}\/\d{1,2}\/\d{2,4}/g;
+  const date = content.match(regex)
     const currDate = formatDate()
     listOfAchives.push({
-        id: listOfAchives.length,
+        id: listOfAchives[listOfAchives.length - 1].id + 1,
         archived: false,
         category: category,
         name: name,
         created: currDate,
         content: content,
-        date: ''
+        date: date ? date.join(', ') : '' 
     })    
-    console.log(listOfAchives);
     
+}
+
+export const onClicKDeleteAll = () => {
+  
+  if(confirm('Are you sure you want to delete all tasks?')) {
+    listOfAchives = []
+  }
+}
+
+export const onEditContent = (content, id, name) => {
+  const regex = /\d{1,2}\/\d{1,2}\/\d{2,4}/g;
+  const date = content.match(regex)
+  listOfAchives.forEach(key => {
+    if(key.id === id) {
+      key.date = date ? date.join(', ') : '' 
+        key.content = content
+        key.name = name
+    }
+})
 }

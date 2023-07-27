@@ -1,4 +1,4 @@
-import { addTask } from "../utils/archive.js";
+import { addTask } from "../utils/store.js";
 
 (function ()  {
     const backdrop = document.querySelector('.modal__window__backdrop');

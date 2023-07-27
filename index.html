@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>task1</title>
   </head>
   <body>
@@ -16,14 +19,11 @@
             <div>Category</div>
             <div>Content</div>
             <div>Dates</div>
-            <div>
+            <div class="sidebar__buttons__container">
+              <span class="sidebar__buttons__archive">Active</span>
               <img
-                class="sidebar__buttons"
-                src="./assets/img/archive.svg"
-                alt="archive"
-              />
-              <img
-                class="sidebar__buttons"
+                data-title="Delete all"
+                class="sidebar__buttons__delete"
                 src="./assets/img/trash.svg"
                 alt="trash"
               />
@@ -75,9 +75,9 @@
             <span class="warning hidden">Fill in all fields</span>
           </div>
           <div class="modal__window__container__right">
-            <label for="content">Content:</label
+            <label for="contentFirst">Content:</label
             ><textarea
-              name="content"
+              name="contentFirst"
               id="content"
               cols="30"
               rows="10"
@@ -90,36 +90,35 @@
 
       <div class="modal__window__backdrop hidden" id="modal-backdrop"></div>
 
-
       <div id="modal_2" class="modal__window__content">
         <div class="modal__window__content__container">
           <h3 class="modal__window__content__container__header"></h3>
           <div class="modal__window__content__container__left">
             <br />
-            <div class="modal__window__content__container__left__name"></div>
+            <input class="modal__window__content__container__left__name"></input>
             <div class="modal__window__content__container__left__created"></div>
             <br />
-  
           </div>
           <div class="modal__window__content__container__right">
             <label for="content">Content:</label
             ><textarea
-              name="content"
+              name="contentSecond"
               id="contentSecond"
               cols="30"
               rows="10"
             ></textarea>
           </div>
 
-          <a href="#" class="modal__content__close">Close</a>
+          <a href="#" class="modal__content__close">Save</a>
         </div>
       </div>
 
-      <div class="modal__window__content__backdrop hidden" id="modal-content-backdrop"></div>
+      <div
+        class="modal__window__content__backdrop hidden"
+        id="modal-content-backdrop"
+      ></div>
     </div>
-
-    </div>
-    <script src="./components/ContentModal.js"></script>
+    <script type="module" src="./components/ContentModal.js"></script>
     <script type="module" src="./components/ModalWindow.js"></script>
     <script type="module" src="./index.js"></script>
   </body>

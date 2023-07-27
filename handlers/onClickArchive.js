@@ -1,5 +1,5 @@
-import { listOfAchives } from "../utils/archive.js";
-import { filterArchiveList } from "../utils/archive.js";
+import { listOfAchives } from "../utils/store.js";
+import { filterArchiveList } from "../utils/store.js";
 const onClickArchive = (id) => {
   filterArchiveList(id);
 };

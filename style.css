@@ -1,5 +1,11 @@
 body {
   box-sizing: border-box;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 .list__header,
 .listSecondTable__header {
@@ -43,6 +49,10 @@ body {
   background-color: rgba(173, 182, 230, 0.2);
   padding-left: 14px;
 }
+.dateTask {
+  display: flex;
+  justify-content: center;
+}
 .taskSecond {
   justify-content: center;
 }
@@ -61,21 +71,34 @@ body {
   width: 24px;
   margin-left: 12px;
 }
-
+  .sidebar__buttons__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidebar__buttons__delete {
+    margin-left: 14px;
+    cursor: pointer;
+  }
+  .sidebar__buttons__archive {
+    cursor: pointer;
+  }
+  .sidebar__buttons__archive:hover {
+    color: gray;
+  }
 .modal__window,
 .modal__window__content {
-  border: 1px solid lightgray;
   position: fixed;
   z-index: 100;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -80%) scale(0.9);
-  width: 520px;
+  width: 550px;
   max-width: 95%;
-  height: 260px;
-  box-shadow: 0 10px 30px rgba(#000, 0.2);
+  height: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: 12px;
   transition: all 0.18s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -95,7 +118,7 @@ body {
 .modal__window__container__header, .modal__window__content__container__header {
   position: fixed;
   padding-top: 0;
-  top: -14px;
+  top: 0px;
   left: 14px;
 }
 .modal__window__container__left, .modal__window__content__container__left {
@@ -105,6 +128,10 @@ body {
   width: 50%;
 }
 select {
+  margin-bottom: 14px;
+}
+.modal__window__content__container__left__name {
+  width: 130px;
   margin-bottom: 14px;
 }
 .modal__window__backdrop, .modal__window__content__backdrop {
