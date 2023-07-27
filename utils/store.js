@@ -85,7 +85,7 @@ export const filterArchiveList = (id) => {
   const date = content.match(regex)
     const currDate = formatDate()
     listOfAchives.push({
-        id: listOfAchives[listOfAchives.length - 1].id + 1,
+        id: listOfAchives.length ? listOfAchives[listOfAchives.length - 1].id + 1 : 0,
         archived: false,
         category: category,
         name: name,
