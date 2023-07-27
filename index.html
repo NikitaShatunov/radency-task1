@@ -1,47 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>task1</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <div>
-            <div class="listWrapper">
-                <div class='list__header'>
-                    <div>Name</div>
-                    <div>Created</div>
-                    <div>Category</div>
-                    <div>Content</div>
-                    <div>Dates</div>
-                    <div>
-                         <img class='sidebar__buttons' src='./assets/img/archive.svg' alt="archive"> 
-                        <img class='sidebar__buttons' src= "./assets/img/trash.svg" alt="trash">
-                    </div>
-                  </div>
-                  <div class='list__items'>
-                    <div class="list__items__main">
-          
-                    </div>
-                  </div>
+      <div>
+        <div class="listWrapper">
+          <div class="list__header">
+            <div>Name</div>
+            <div>Created</div>
+            <div>Category</div>
+            <div>Content</div>
+            <div>Dates</div>
+            <div class="sidebar__buttons__container">
+              <span class="sidebar__buttons__archive">Active</span>
+              <img
+                data-title="Delete all"
+                class="sidebar__buttons__delete"
+                src="./assets/img/trash.svg"
+                alt="trash"
+              />
             </div>
-            <button>Create note</button>
-            <div class="listWrapperSecondTable">
-                <div class='listSecondTable__header'>
-                    <div>Note category</div>
-                    <div>Active</div>
-                    <div>Archive</div>
-                  </div>
-                  <div class='listSecondTable__items'>
-                    <div class="listSecondTable__items__main">
-          
-                    </div>
-                  </div>
-            </div>
+          </div>
+          <div class="list__items">
+            <div class="list__items__main"></div>
+          </div>
         </div>
+        <button
+          type="button"
+          class="btn btn-lg btn-primary js-modal"
+          data-modal="#modal_1"
+        >
+          Create note
+        </button>
+        <div class="listWrapperSecondTable">
+          <div class="listSecondTable__header">
+            <div>Note category</div>
+            <div>Active</div>
+            <div>Archived</div>
+          </div>
+          <div class="listSecondTable__items">
+            <div class="listSecondTable__items__main"></div>
+          </div>
+        </div>
+      </div>
+      <div id="modal_1" class="modal__window">
+        <div class="modal__window__container">
+          <h3 class="modal__window__container__header">Add task:</h3>
+          <div class="modal__window__container__left">
+            <label for="category">Choose category:</label><br /><select
+              name="category"
+              id="category"
+            >
+              <option value="Shop">Shop</option>
+              <option value="Random Thought">Random Thought</option>
+              <option value="Gym">Gym</option>
+              <option value="Idea">Idea</option>
+            </select>
+            <br />
+            <label
+              class="modal__window__container__labelOfTask"
+              for="nameOfTask"
+              >Name:</label
+            ><br /><input name="nameOfTask" id="nameOfTask" type="text" />
+            <br />
+            <br />
+            <span class="warning hidden">Fill in all fields</span>
+          </div>
+          <div class="modal__window__container__right">
+            <label for="contentFirst">Content:</label
+            ><textarea
+              name="contentFirst"
+              id="content"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+
+          <a href="#" class="modal__close">Save</a>
+        </div>
+      </div>
+
+      <div class="modal__window__backdrop hidden" id="modal-backdrop"></div>
+
+      <div id="modal_2" class="modal__window__content">
+        <div class="modal__window__content__container">
+          <h3 class="modal__window__content__container__header"></h3>
+          <div class="modal__window__content__container__left">
+            <br />
+            <input class="modal__window__content__container__left__name"></input>
+            <div class="modal__window__content__container__left__created"></div>
+            <br />
+          </div>
+          <div class="modal__window__content__container__right">
+            <label for="content">Content:</label
+            ><textarea
+              name="contentSecond"
+              id="contentSecond"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+
+          <a href="#" class="modal__content__close">Save</a>
+        </div>
+      </div>
+
+      <div
+        class="modal__window__content__backdrop hidden"
+        id="modal-content-backdrop"
+      ></div>
     </div>
-    <script src="./index.js"></script>
-</body>
+    <script type="module" src="./components/ContentModal.js"></script>
+    <script type="module" src="./components/ModalWindow.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>
