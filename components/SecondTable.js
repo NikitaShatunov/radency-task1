@@ -28,6 +28,7 @@ export const SecondTable = () => {
         categories[key[0]]
       }' alt='${key[0]}'/>
       ${key[0]}
+      </li>
       <li class="taskSecond">${unarchive.get(key[0]) || "0"}</li>
       <li class="taskSecond">${archive.get(key[0]) || "0"}</li>
       </ul>`;
