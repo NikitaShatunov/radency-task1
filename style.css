@@ -151,7 +151,7 @@ select {
   bottom: 10px;
   right: 50%;
 }
-.warning {
+.warning, .warningContent {
   top: 24px;
   color: red;
 }
